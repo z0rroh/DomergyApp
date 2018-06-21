@@ -1,0 +1,15 @@
+@import url(~@blueprintjs/core/lib/css/blueprint.css);
+@import url(~@blueprintjs/icons/lib/css/blueprint-icons.css);
+.Footer {
+  border-top: 1px solid #E1E8ED;
+  padding-top: 20px;
+  padding-bottom: 15px; }
+  .Footer p {
+    margin: 0; }
+  .Footer .FooterCR {
+    text-align: right; }
+  .Footer .FooterRedes {
+    align-items: left; }
+
+.LoginContainer {
+  height: 100vh; }

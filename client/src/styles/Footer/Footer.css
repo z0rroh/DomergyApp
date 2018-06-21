@@ -1,0 +1,10 @@
+.Footer {
+  border-top: 1px solid #E1E8ED;
+  padding-top: 20px;
+  padding-bottom: 15px; }
+  .Footer p {
+    margin: 0; }
+  .Footer .FooterCR {
+    text-align: right; }
+  .Footer .FooterRedes {
+    align-items: left; }
