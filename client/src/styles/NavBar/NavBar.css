@@ -1,0 +1,21 @@
+.NavBarContainer .NavBar {
+  background: linear-gradient(to right, #6e0081, #260082); }
+
+.NavBarContainer .NavBarElement {
+  color: #fff; }
+  .NavBarContainer .NavBarElement .NavBarHeading {
+    margin: 0px;
+    display: flex;
+    justify-content: center; }
+    .NavBarContainer .NavBarElement .NavBarHeading img {
+      margin-top: 4px;
+      height: 24px;
+      width: 135px; }
+  .NavBarContainer .NavBarElement .NavBarDivider {
+    border-left: 1px solid #fff; }
+  .NavBarContainer .NavBarElement button:hover {
+    color: #fff; }
+  .NavBarContainer .NavBarElement button {
+    color: #fff; }
+    .NavBarContainer .NavBarElement button svg {
+      color: #fff; }

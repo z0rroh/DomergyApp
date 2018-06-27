@@ -1,0 +1,158 @@
+.DashBoardContainer {
+  padding: 15px 0px 20px 0px; }
+  .DashBoardContainer .DashBoardCard {
+    padding: 0;
+    word-wrap: break-word; }
+    .DashBoardContainer .DashBoardCard .DispositivoTitle {
+      padding: 10px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+      width: 100%; }
+      .DashBoardContainer .DashBoardCard .DispositivoTitle h6 {
+        margin: 0; }
+    .DashBoardContainer .DashBoardCard .DispositivoBody {
+      padding: 10px 20px;
+      width: 100%; }
+      .DashBoardContainer .DashBoardCard .DispositivoBody .DispositivoElementButton {
+        margin-top: 14px;
+        width: 100%; }
+        .DashBoardContainer .DashBoardCard .DispositivoBody .DispositivoElementButton .IconBox {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 90%;
+          width: 100%;
+          margin: 0px;
+          padding: 0px; }
+          .DashBoardContainer .DashBoardCard .DispositivoBody .DispositivoElementButton .IconBox svg {
+            -webkit-transition: width 2s;
+            transition: width 1s;
+            border-radius: 5px;
+            background-color: #6e0081;
+            margin: 0px;
+            color: #fff;
+            padding: 6px;
+            text-decoration: none !important; }
+          .DashBoardContainer .DashBoardCard .DispositivoBody .DispositivoElementButton .IconBox svg:target {
+            content: '';
+            background-color: #000;
+            border-radius: 50%;
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            transform: scale(0.001, 0.001); }
+          .DashBoardContainer .DashBoardCard .DispositivoBody .DispositivoElementButton .IconBox svg:focus {
+            outline: 0;
+            color: #fff; }
+            .DashBoardContainer .DashBoardCard .DispositivoBody .DispositivoElementButton .IconBox svg:focus svg:before {
+              animation: effect_dylan 0.8s ease-out; }
+        .DashBoardContainer .DashBoardCard .DispositivoBody .DispositivoElementButton .IconBox:hover svg {
+          background-color: #260082;
+          width: 100%;
+          color: #fff; }
+    .DashBoardContainer .DashBoardCard .UbicacionTitle {
+      padding: 10px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+      width: 100%; }
+      .DashBoardContainer .DashBoardCard .UbicacionTitle h6 {
+        margin: 0; }
+    .DashBoardContainer .DashBoardCard .UbicacionBody {
+      padding: 8px;
+      width: 100%;
+      height: 100%; }
+    .DashBoardContainer .DashBoardCard .ConsumoActualTitle {
+      padding: 10px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+      width: 100%; }
+      .DashBoardContainer .DashBoardCard .ConsumoActualTitle h6 {
+        margin: 0; }
+    .DashBoardContainer .DashBoardCard .ConsumoKwhTitle {
+      padding: 10px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      display: flex; }
+      .DashBoardContainer .DashBoardCard .ConsumoKwhTitle .IconTitle {
+        color: #ff9d0c; }
+      .DashBoardContainer .DashBoardCard .ConsumoKwhTitle h6 {
+        margin: 0;
+        margin-left: 10px;
+        font-size: 16px;
+        font-weight: 700;
+        color: #ff9d0c; }
+    .DashBoardContainer .DashBoardCard .ConsumoKwhBody {
+      width: 100%;
+      height: 274px;
+      position: relative;
+      overflow: hidden; }
+      .DashBoardContainer .DashBoardCard .ConsumoKwhBody .ConsumoInfo {
+        margin: 0px;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        z-index: 0;
+        background-color: rgba(255, 157, 12, 0.5);
+        display: flex;
+        flex-direction: column; }
+        .DashBoardContainer .DashBoardCard .ConsumoKwhBody .ConsumoInfo .TotalMonetario:hover h1, .DashBoardContainer .DashBoardCard .ConsumoKwhBody .ConsumoInfo .TotalMonetario:hover h4, .DashBoardContainer .DashBoardCard .ConsumoKwhBody .ConsumoInfo .MedicionMaxima:hover h1, .DashBoardContainer .DashBoardCard .ConsumoKwhBody .ConsumoInfo .MedicionMaxima:hover h4 {
+          color: #260082; }
+        .DashBoardContainer .DashBoardCard .ConsumoKwhBody .ConsumoInfo .TotalMonetario:hover h1, .DashBoardContainer .DashBoardCard .ConsumoKwhBody .ConsumoInfo .MedicionMaxima:hover h1 {
+          font-size: 40px; }
+        .DashBoardContainer .DashBoardCard .ConsumoKwhBody .ConsumoInfo .TotalMonetario, .DashBoardContainer .DashBoardCard .ConsumoKwhBody .ConsumoInfo .MedicionMaxima {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          height: 100%;
+          flex-wrap: wrap; }
+          .DashBoardContainer .DashBoardCard .ConsumoKwhBody .ConsumoInfo .TotalMonetario h1, .DashBoardContainer .DashBoardCard .ConsumoKwhBody .ConsumoInfo .TotalMonetario h4, .DashBoardContainer .DashBoardCard .ConsumoKwhBody .ConsumoInfo .MedicionMaxima h1, .DashBoardContainer .DashBoardCard .ConsumoKwhBody .ConsumoInfo .MedicionMaxima h4 {
+            color: #fff;
+            display: inline-block;
+            overflow: hidden;
+            text-overflow: ellipsis; }
+        .DashBoardContainer .DashBoardCard .ConsumoKwhBody .ConsumoInfo .MedicionMaxima {
+          padding: 30px 5px 0px 5px; }
+          .DashBoardContainer .DashBoardCard .ConsumoKwhBody .ConsumoInfo .MedicionMaxima h4 {
+            padding-right: 40px; }
+        .DashBoardContainer .DashBoardCard .ConsumoKwhBody .ConsumoInfo .TotalMonetario {
+          padding: 0px 5px 0px 5px;
+          margin-top: -10px; }
+          .DashBoardContainer .DashBoardCard .ConsumoKwhBody .ConsumoInfo .TotalMonetario h4 {
+            padding-right: 60px; }
+      .DashBoardContainer .DashBoardCard .ConsumoKwhBody video {
+        height: 100%;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        z-index: -1;
+        transform: translateY(-50%); }
+    .DashBoardContainer .DashBoardCard .TotalTitle {
+      padding: 5px 10px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+      width: 100%; }
+      .DashBoardContainer .DashBoardCard .TotalTitle h6 {
+        margin: 0; }
+    .DashBoardContainer .DashBoardCard .TotalBody {
+      padding: 5px 10px;
+      width: 100%;
+      display: flex;
+      justify-content: center; }
+      .DashBoardContainer .DashBoardCard .TotalBody span {
+        font-size: 23px; }
+    .DashBoardContainer .DashBoardCard .EstadoTitle {
+      padding: 5px 10px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+      width: 100%; }
+      .DashBoardContainer .DashBoardCard .EstadoTitle h6 {
+        margin: 0; }
+    .DashBoardContainer .DashBoardCard .EstadoBody {
+      width: 100%;
+      height: 117px;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
