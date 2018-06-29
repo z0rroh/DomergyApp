@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend} from 'recharts'
+import {ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend} from 'recharts'
 import moment from 'moment'
 
 class ColumnChart extends Component {
@@ -46,16 +46,18 @@ class ColumnChart extends Component {
           <h6>Consumo Actual</h6>
         </div>
         <div className="ConsumoActualBody">
-          <BarChart width={585} height={283} data={data} margin={{top: 20, right: 10, left: 10, bottom: 10}}>
-            <CartesianGrid strokeDasharray="3 3"/>
-            <XAxis dataKey="time"/>
-            <YAxis yAxisId="left" orientation="left" stroke="#ff9d0c"/>
-            <YAxis yAxisId="right" orientation="right" stroke="#6e0081"/>
-            <Tooltip/>
-            <Legend />
-            <Bar yAxisId="left" dataKey="kW" fill="#ff9d0c" />
-            <Bar yAxisId="right" dataKey="$" fill="#6e0081" />
-          </BarChart>
+          <ResponsiveContainer width="100%" height="100%" minHeight={283}>
+            <BarChart data={data} margin={{top: 20, right: 10, left: 10, bottom: 10}}>
+              <CartesianGrid strokeDasharray="3 3"/>
+              <XAxis dataKey="time"/>
+              <YAxis yAxisId="left" orientation="left" stroke="#ffc658"/>
+              <YAxis yAxisId="right" orientation="right" stroke="#82ca9d"/>
+              <Tooltip/>
+              <Legend />
+              <Bar yAxisId="left" dataKey="kW" fill="#ffc658" />
+              <Bar yAxisId="right" dataKey="$" fill="#82ca9d" />
+            </BarChart>
+          </ResponsiveContainer>
         </div>
       </div>
     );

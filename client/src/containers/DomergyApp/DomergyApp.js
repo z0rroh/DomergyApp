@@ -9,13 +9,7 @@ class DomergyApp extends Component {
     return (
       <div className="DomergyAppContainer">
         <NavBar/>
-        <div className="container">
-          <div className="row">
-            <div className="col-xs-12">
-               <DeviceDashBoard/>
-            </div>
-          </div>
-        </div>
+        <DeviceDashBoard/>
       </div>
     );
   }
