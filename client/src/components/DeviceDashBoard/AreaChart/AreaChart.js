@@ -27,7 +27,7 @@ class SimpleAreaChart extends Component {
       newData.splice(0,1);
       newData.push({name: moment(new Date()).format('HH:mm:ss'), uv: Math.floor((Math.random() * 1000) + 800)})
       this.setState({data: newData})
-    }, 2000);
+    }, 1000);
   }
 
 

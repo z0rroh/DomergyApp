@@ -23,18 +23,12 @@ class ColumnChart extends Component {
     this.delayState();
   }
 
-  componentDidUpdate(){
-    console.log("hola");
-  }
   delayState() {
-    setTimeout(() => {
-        var newData = {name: moment(new Date()).format('HH:mm'), $: 1000, kW: 200}
-        var data = this.state.data;
-        data.splice(0,1)
-        data.push(newData)
-        this.setState({
-          data: data
-        })
+    setInterval(() => {
+      const newData = this.state.data;
+      newData.splice(0,1);
+      newData.push({time: moment(new Date()).format('HH:mm:ss'), $: Math.floor((Math.random() * 1200) + 1000), kW: Math.floor((Math.random() * 600) + 500)})
+      this.setState({data: newData})
     }, 1000);
   }
 
@@ -47,7 +41,7 @@ class ColumnChart extends Component {
         </div>
         <div className="ConsumoActualBody">
           <ResponsiveContainer width="100%" height="100%" minHeight={283}>
-            <BarChart data={data} margin={{top: 20, right: 10, left: 10, bottom: 10}}>
+            <BarChart data={data.slice()} margin={{top: 20, right: 10, left: 10, bottom: 10}}>
               <CartesianGrid strokeDasharray="3 3"/>
               <XAxis dataKey="time"/>
               <YAxis yAxisId="left" orientation="left" stroke="#ffc658"/>

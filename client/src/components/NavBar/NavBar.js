@@ -22,13 +22,13 @@ class NavBar extends Component {
                 <NavbarGroup className="NavBarElement" align={Alignment.LEFT}>
                     <NavbarHeading className="NavBarHeading"><img src={logo} alt="Logo" /></NavbarHeading>
                     <NavbarDivider className="NavBarDivider"/>
-                    <div className="pt-input-group">
+                    <div className="pt-input-group hiddeOnScreen">
                       <Icon icon="search" iconSize={16}/>
                       <input className="Search pt-input pt-round" type="search" placeholder="Buscar Dispositivo ..." dir="auto" />
                     </div>
                 </NavbarGroup>
                 <NavbarGroup className="NavBarElement" align={Alignment.RIGHT}>
-                  <Button className="pt-minimal" icon="home" text="Home" />
+                  <Button className="pt-minimal hiddeOnScreen" icon="home" text="Home" />
                   <NavbarDivider className="NavBarDivider"/>
                   <Button className="pt-minimal" icon="user"/>
                   <Button className="pt-minimal" icon="notifications"/>

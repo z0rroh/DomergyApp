@@ -12,37 +12,37 @@ class DashBoard extends Component {
 
   render() {
     return (
-      <div className="DashBoardContainer container">
-        <div className="row">
-          <div className="DashBoardCardContainer col-xs-12 col-sm-3">
+      <div className="container">
+        <div className="DashBoardContainer row">
+          <div className="DashBoardCardContainer col-xs-12 col-sm-6 col-lg-3">
             <Card
               className="DashBoardCard col-xs-12"
               interactive={true} elevation={Elevation.TWO}>
               <DeviceInfo/>
             </Card>
           </div>
-          <div className="DashBoardCardContainer col-xs-12 col-sm-3">
+          <div className="DashBoardCardContainer col-xs-12 col-sm-6 col-lg-3">
             <Card
               className="DashBoardCard col-xs-12"
               interactive={true} elevation={Elevation.TWO}>
               <EnergyResume/>
             </Card>
           </div>
-          <div className="DashBoardCardContainer col-xs-12 col-sm-6">
+          <div className="DashBoardCardContainer col-xs-12 col-lg-6">
             <Card
               className="DashBoardCard col-xs-12"
               interactive={true} elevation={Elevation.TWO}>
               <GoogleMaps/>
             </Card>
           </div>
-          <div className="DashBoardCardContainer col-xs-12 col-sm-6">
+          <div className="DashBoardCardContainer col-xs-12 col-sm- col-lg-6">
             <Card
               className="DashBoardCard col-xs-12"
               interactive={true} elevation={Elevation.TWO}>
               <ColumnChart/>
             </Card>
           </div>
-          <div className="DashBoardCardContainer col-xs-12 col-sm-6">
+          <div className="DashBoardCardContainer col-xs-12 col-sm- col-lg-6">
             <Card
               className="DashBoardCard col-xs-12"
               interactive={true} elevation={Elevation.TWO}>

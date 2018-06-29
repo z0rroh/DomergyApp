@@ -19,7 +19,7 @@
   background-color: #e9ebee; }
 
 .DashBoardContainer {
-  padding: 15px 0px 20px 0px; }
+  margin: 15px 5px 20px 5px; }
   .DashBoardContainer .DashBoardCardContainer {
     padding: 5px 5px; }
     .DashBoardContainer .DashBoardCardContainer .DashBoardCard {
@@ -101,9 +101,8 @@
               padding-right: 60px; }
         .DashBoardContainer .DashBoardCardContainer .DashBoardCard .ConsumoKwhBody video {
           position: absolute;
-          top: 50%;
-          left: 0;
-          height: 100%;
+          top: 20%;
+          left: -65%;
           z-index: -1;
           transform: translateY(-50%); }
       .DashBoardContainer .DashBoardCardContainer .DashBoardCard .TotalTitle {
@@ -214,3 +213,7 @@
       background-color: #260082;
       width: 100%;
       color: #fff; }
+
+@media (max-width: 767px) {
+  .hiddeOnScreen {
+    display: none; } }
