@@ -1,0 +1,60 @@
+.DeviceInfoContainer .DeviceInfoTitle {
+  padding: 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  width: 100%; }
+  .DeviceInfoContainer .DeviceInfoTitle h6 {
+    margin: 0; }
+
+.DeviceInfoContainer .DeviceInfoBody {
+  padding: 10px 20px;
+  width: 100%; }
+  .DeviceInfoContainer .DeviceInfoBody .DeviceElements .DeviceElement {
+    margin: 10px 0 0; }
+    .DeviceInfoContainer .DeviceInfoBody .DeviceElements .DeviceElement .spanAtribute {
+      font-weight: bold;
+      margin-right: 5px; }
+    .DeviceInfoContainer .DeviceInfoBody .DeviceElements .DeviceElement .SwitchButton {
+      background-color: #6e0081; }
+    .DeviceInfoContainer .DeviceInfoBody .DeviceElements .DeviceElement .spanSwitchButton {
+      font-weight: bold;
+      margin: 0 5px 0 10px; }
+  .DeviceInfoContainer .DeviceInfoBody .DeviceElementButton {
+    margin-top: 14px;
+    width: 100%; }
+    .DeviceInfoContainer .DeviceInfoBody .DeviceElementButton .IconBox {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 90%;
+      width: 100%;
+      margin: 0px;
+      padding: 0px; }
+      .DeviceInfoContainer .DeviceInfoBody .DeviceElementButton .IconBox svg {
+        -webkit-transition: width 2s;
+        transition: width 1s;
+        border-radius: 5px;
+        background-color: #6e0081;
+        margin: 0px;
+        color: #fff;
+        padding: 6px;
+        text-decoration: none !important; }
+      .DeviceInfoContainer .DeviceInfoBody .DeviceElementButton .IconBox svg:target {
+        content: '';
+        background-color: #000;
+        border-radius: 50%;
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        transform: scale(0.001, 0.001); }
+      .DeviceInfoContainer .DeviceInfoBody .DeviceElementButton .IconBox svg:focus {
+        outline: 0;
+        color: #fff; }
+        .DeviceInfoContainer .DeviceInfoBody .DeviceElementButton .IconBox svg:focus svg:before {
+          animation: effect_dylan 0.8s ease-out; }
+    .DeviceInfoContainer .DeviceInfoBody .DeviceElementButton .IconBox:hover svg {
+      background-color: #260082;
+      width: 100%;
+      color: #fff; }

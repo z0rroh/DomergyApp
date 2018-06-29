@@ -1,0 +1,63 @@
+
+.DeviceInfoContainer
+  .DeviceInfoTitle
+    padding: 10px
+    border-bottom: 1px solid rgba(0,0,0,0.12)
+    width: 100%
+    h6
+      margin: 0
+  .DeviceInfoBody
+    padding: 10px 20px
+    width: 100%
+    .DeviceElements
+      .DeviceElement
+        margin: 10px 0 0
+        .spanAtribute
+          font-weight: bold
+          margin-right: 5px
+        .SwitchButton
+          background-color: #6e0081
+        .spanSwitchButton
+          font-weight: bold
+          margin: 0 5px 0 10px
+    .DeviceElementButton
+      margin-top: 14px
+      width: 100%
+      .IconBox
+        display: flex
+        justify-content: center
+        align-items: center
+        height: 90%
+        width: 100%
+        margin: 0px
+        padding: 0px
+        svg
+          -webkit-transition: width 2s
+          transition: width 1s
+          border-radius: 5px
+          background-color: #6e0081
+          margin: 0px
+          color: #fff
+          padding: 6px
+          text-decoration: none !important
+        svg:target
+          content: ''
+          background-color: #000
+          border-radius: 50%
+          display: block
+          position: absolute
+          top: 0
+          right: 0
+          bottom: 0
+          left: 0
+          transform: scale(0.001, 0.001)
+        svg:focus
+          outline: 0
+          color: #fff
+          svg:before
+            animation: effect_dylan 0.8s ease-out
+      .IconBox:hover
+        svg
+          background-color: #260082
+          width: 100%
+          color: #fff

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import DashBoard from '../DashBoard/DashBoard'
+import DeviceDashBoard from '../DeviceDashBoard/DeviceDashBoard'
 import NavBar from '../../components/NavBar/NavBar'
+import SideBar from '../../components/SideBar/SideBar'
 
 class DomergyApp extends Component {
   static isPrivate = true;
@@ -11,7 +12,7 @@ class DomergyApp extends Component {
         <div className="container">
           <div className="row">
             <div className="col-xs-12">
-               <DashBoard/>
+               <DeviceDashBoard/>
             </div>
           </div>
         </div>
