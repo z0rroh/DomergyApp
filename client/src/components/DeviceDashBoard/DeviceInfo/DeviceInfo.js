@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Icon, Alert, Button, Intent } from '@blueprintjs/core'
 import Switch from 'react-toggle-switch'
+import axios from 'axios'
 
 class DeviceInfo extends Component {
 
@@ -27,6 +28,18 @@ class DeviceInfo extends Component {
         switched: !prevState.switched
       };
     });
+  }
+
+  toggleRequest = async () =>{
+
+  }
+  deviceRequest = async () =>{
+    try{
+      const res = await axios.put('http://10.108.0.45:3001/api/device/PIRD-SMARTMETERLAB-1/command/POWER')
+      console.log(res);
+    }catch(e){
+      console.log(e);
+    }
   }
 
   render() {
