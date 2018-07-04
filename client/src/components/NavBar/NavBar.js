@@ -22,7 +22,7 @@ class NavBar extends Component {
                 <NavbarGroup className="NavBarElement" align={Alignment.LEFT}>
                     <NavbarHeading className="NavBarHeading"><img src={logo} alt="Logo" /></NavbarHeading>
                     <NavbarDivider className="NavBarDivider"/>
-                    <div className="pt-input-group hiddeOnScreen">
+                    <div className="pt-input-group hiddeSearchBar">
                       <Icon icon="search" iconSize={16}/>
                       <input className="Search pt-input pt-round" type="search" placeholder="Buscar Dispositivo ..." dir="auto" />
                     </div>

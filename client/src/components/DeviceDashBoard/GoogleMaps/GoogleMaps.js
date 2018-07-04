@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { withScriptjs, withGoogleMap, GoogleMap, Marker } from 'react-google-maps';
+import { withScriptjs, withGoogleMap, GoogleMap, Marker} from 'react-google-maps';
 
 class GoogleMaps extends Component {
 
@@ -23,20 +23,19 @@ class GoogleMaps extends Component {
         {
           props.isMarkerShown &&
           <Marker
-            position={{lat: cordenates.lat, lng: cordenates.lng}}/>
+            onClick={this.onToggleOpen}
+            position={{lat: cordenates.lat, lng: cordenates.lng}}>
+          </Marker>
         }
       </GoogleMap>
     ));
     return(
-      <div className="GoogleMapContainer">
-        <div className="UbicacionTitle">
-          <h6>Ubicación</h6>
-        </div>
+      <div className="GoogleMapsContainer">
         <div className="UbicacionBody">
           <GoogleMapRender
             googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyAWmdutBvMd8SGai4WAFxUUnbvxzDPeAxo"
             loadingElement={<div style={{height:`100%`}}/>}
-            containerElement={<div style={{height:`267px`,width:'100%'}}/>}
+            containerElement={<div style={{height:`320px`,width:'100%'}}/>}
             mapElement={<div style={{height:`100%`}}/>}
             isMarkerShown={isMarkerShown}/>
         </div>

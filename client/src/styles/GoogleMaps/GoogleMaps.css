@@ -1,0 +1,13 @@
+.DashBoardCardMap {
+  overflow: hidden;
+  padding: 0px; }
+  .DashBoardCardMap .GoogleMapsContainer .UbicacionTitle {
+    padding: 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    width: 100%; }
+    .DashBoardCardMap .GoogleMapsContainer .UbicacionTitle h6 {
+      margin: 0; }
+  .DashBoardCardMap .GoogleMapsContainer .UbicacionBody {
+    padding: 0px;
+    width: 100%;
+    height: 100%; }

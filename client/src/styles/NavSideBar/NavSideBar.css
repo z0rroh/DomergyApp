@@ -1,0 +1,71 @@
+@import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
+@import url(https://fonts.googleapis.com/css?family=Titillium+Web:300);
+.NavSideBarContainer {
+  padding: 0px;
+  height: 100%;
+  width: 100%;
+  position: relative; }
+  .NavSideBarContainer .main-menu:hover {
+    width: 150px;
+    overflow: visible; }
+  .NavSideBarContainer .main-menu {
+    padding-top: 10px;
+    vertical-align: top;
+    background: #fff;
+    border-right: 1px solid #c1c3c6;
+    height: 100%;
+    width: 60px;
+    overflow: hidden;
+    position: absolute;
+    -webkit-transition: width .2s linear;
+    transition: width .2s linear;
+    -webkit-transform: translateZ(0) scale(1, 1);
+    z-index: 1000; }
+    .NavSideBarContainer .main-menu ul {
+      width: 100%;
+      margin: 0px;
+      padding: 0px; }
+    .NavSideBarContainer .main-menu li {
+      position: relative;
+      display: block;
+      width: 100%;
+      margin: 0px;
+      padding: 0px; }
+      .NavSideBarContainer .main-menu li a {
+        line-height: 48px;
+        color: #c1c3c6;
+        position: relative;
+        display: table;
+        border-collapse: collapse;
+        border-spacing: 0;
+        font-family: arial;
+        font-size: 14px;
+        text-decoration: none;
+        -webkit-transform: translateZ(0) scale(1, 1);
+        -webkit-transition: all .1s linear;
+        transition: all .1s linear;
+        width: 100%; }
+        .NavSideBarContainer .main-menu li a svg {
+          position: relative;
+          display: table-cell;
+          width: 60px;
+          height: 30px;
+          text-align: center;
+          vertical-align: middle;
+          font-size: 20px; }
+      .NavSideBarContainer .main-menu li a:hover, .NavSideBarContainer .main-menu li a:focus {
+        text-decoration: none; }
+    .NavSideBarContainer .main-menu li::before {
+      background-color: transparent;
+      content: '';
+      height: 100%;
+      left: 0;
+      position: absolute;
+      width: 5px; }
+    .NavSideBarContainer .main-menu li:hover:before, .NavSideBarContainer .main-menu li.active::before {
+      background-color: #6e0081; }
+    .NavSideBarContainer .main-menu li:hover, .NavSideBarContainer .main-menu li.active {
+      background-color: #e8f0fe; }
+
+.main-menu li:hover > a, .main-menu nav li.active > a, .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus, .dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus, .no-touch .dashboard-page nav.dashboard-menu ul li:hover a, .dashboard-page nav.dashboard-menu ul li.active a {
+  color: #260082; }

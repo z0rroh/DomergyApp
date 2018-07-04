@@ -12,7 +12,7 @@ class DashBoard extends Component {
 
   render() {
     return (
-      <div className="container">
+      <div className="container col-xs-12">
         <div className="DashBoardContainer row">
           <div className="DashBoardCardContainer col-xs-12 col-sm-6 col-lg-3">
             <Card
@@ -30,7 +30,7 @@ class DashBoard extends Component {
           </div>
           <div className="DashBoardCardContainer col-xs-12 col-lg-6">
             <Card
-              className="DashBoardCard col-xs-12"
+              className="DashBoardCardMap col-xs-12"
               interactive={true} elevation={Elevation.TWO}>
               <GoogleMaps/>
             </Card>

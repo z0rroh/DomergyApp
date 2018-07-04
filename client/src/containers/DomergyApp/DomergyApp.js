@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import DeviceDashBoard from '../DeviceDashBoard/DeviceDashBoard'
 import NavBar from '../../components/NavBar/NavBar'
-import SideBar from '../../components/SideBar/SideBar'
+import NavSideBar from '../../components/NavSideBar/NavSideBar'
 
 class DomergyApp extends Component {
   static isPrivate = true;
@@ -9,7 +9,14 @@ class DomergyApp extends Component {
     return (
       <div className="DomergyAppContainer">
         <NavBar/>
-        <DeviceDashBoard/>
+        <div className="MainContainer">
+          <div className="NavSideBar">
+            <NavSideBar />
+          </div>
+          <div className="ContentContainer">
+            <DeviceDashBoard/>
+          </div>
+        </div>
       </div>
     );
   }
