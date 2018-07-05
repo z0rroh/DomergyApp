@@ -298,7 +298,7 @@
       left: 0;
       position: absolute;
       width: 5px; }
-    .NavSideBarContainer .main-menu li:hover:before, .NavSideBarContainer .main-menu li.active::before {
+    .NavSideBarContainer .main-menu li:hover::before, .NavSideBarContainer .main-menu li.active::before {
       background-color: #6e0081; }
     .NavSideBarContainer .main-menu li:hover, .NavSideBarContainer .main-menu li.active {
       background-color: #e8f0fe; }

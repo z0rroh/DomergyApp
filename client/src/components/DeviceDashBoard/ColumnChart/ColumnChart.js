@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend} from 'recharts'
 import moment from 'moment'
+import values from '../consumodiario2.json'
 
 class ColumnChart extends Component {
 
@@ -15,12 +16,86 @@ class ColumnChart extends Component {
         {time: '05:00', $: 1140, kW: 540},
         {time: '06:00', $: 1150, kW: 550},
         {time: '07:00', $: 1160, kW: 560},
-      ]
+      ],
+      values: []
     }
   }
 
   componentDidMount(){
-    this.delayState();
+    //this.delayState();
+    this.delayValues();
+  }
+
+  delayValues = async () =>{
+    try{
+      const items = values;
+      const initialValues = await this.getInitialValues(items)
+      console.log(initialValues);
+      await this.setState({
+        values: initialValues
+      })
+    }catch(e){
+      console.log(e);
+    }
+  }
+
+  getInitialValues = async (items)=>{
+    try{
+      const barsValues = []
+      const end = moment().format('HH')
+      for(var i = 0; i<=end; i++){
+        const arr = [];
+        if(i < 10){
+          if(i === 9){
+            items.forEach((item)=>{
+              const itemTime = moment(item.time).format("HH:mm:ss");
+              if(itemTime >= '0'+i+':00:00' && itemTime < (i+1)+":00:00"){
+                arr.push(item.value);
+              }
+            })
+            const max = Math.max.apply(Math, arr);
+            const newBar = {
+              time: '0'+i+':00:00',
+              kWh: max,
+              $: max*97
+            }
+            barsValues.push(newBar);
+          }else{
+            items.forEach((item)=>{
+              const itemTime = moment(item.time).format("HH:mm:ss");
+              if(itemTime >= '0'+i+':00:00' && itemTime < "0"+(i+1)+":00:00"){
+                arr.push(item.value);
+              }
+            })
+            const max = Math.max.apply(Math, arr);
+            const newBar = {
+              time: '0'+i+':00:00',
+              kWh: max,
+              $: max*97
+            }
+            barsValues.push(newBar);
+          }
+        }
+        else{
+          items.forEach((item)=>{
+            const itemTime = moment(item.time).format("HH:mm:ss");
+            if(itemTime >= i+':00:00' && itemTime < (i+1)+":00:00"){
+              arr.push(item.value);
+            }
+          })
+          const max = Math.max.apply(Math, arr);
+          const newBar = {
+            time: i+':00:00',
+            kWh: max,
+            $: max*97
+          }
+          barsValues.push(newBar);
+        }
+      }
+      return barsValues
+    }catch(e){
+      console.log(e);
+    }
   }
 
   delayState() {
@@ -33,7 +108,7 @@ class ColumnChart extends Component {
   }
 
   render() {
-    const data = this.state.data;
+    const data = this.state.values;
     return (
       <div className="ColumnChartContainer">
         <div className="ConsumoActualTitle">
@@ -45,11 +120,9 @@ class ColumnChart extends Component {
               <CartesianGrid strokeDasharray="3 3"/>
               <XAxis dataKey="time"/>
               <YAxis yAxisId="left" orientation="left" stroke="#ffc658"/>
-              <YAxis yAxisId="right" orientation="right" stroke="#82ca9d"/>
               <Tooltip/>
               <Legend />
-              <Bar yAxisId="left" dataKey="kW" fill="#ffc658" />
-              <Bar yAxisId="right" dataKey="$" fill="#82ca9d" />
+              <Bar yAxisId="left" dataKey="kWh" fill="#ffc658" />
             </BarChart>
           </ResponsiveContainer>
         </div>

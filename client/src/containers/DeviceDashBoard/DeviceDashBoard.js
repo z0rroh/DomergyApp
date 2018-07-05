@@ -35,18 +35,11 @@ class DashBoard extends Component {
               <GoogleMaps/>
             </Card>
           </div>
-          <div className="DashBoardCardContainer col-xs-12 col-sm- col-lg-6">
+          <div className="DashBoardCardContainer col-xs-12 col-sm-12">
             <Card
               className="DashBoardCard col-xs-12"
               interactive={true} elevation={Elevation.TWO}>
               <ColumnChart/>
-            </Card>
-          </div>
-          <div className="DashBoardCardContainer col-xs-12 col-sm- col-lg-6">
-            <Card
-              className="DashBoardCard col-xs-12"
-              interactive={true} elevation={Elevation.TWO}>
-              <LineChart/>
             </Card>
           </div>
           <div className="DashBoardCardContainer col-xs-12">
