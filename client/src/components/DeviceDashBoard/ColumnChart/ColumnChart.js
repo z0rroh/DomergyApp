@@ -30,7 +30,6 @@ class ColumnChart extends Component {
     try{
       const items = values;
       const initialValues = await this.getInitialValues(items)
-      console.log(initialValues);
       await this.setState({
         values: initialValues
       })
@@ -116,7 +115,7 @@ class ColumnChart extends Component {
         </div>
         <div className="ConsumoActualBody">
           <ResponsiveContainer width="100%" height="100%" minHeight={283}>
-            <BarChart data={data.slice()} margin={{top: 20, right: 10, left: 10, bottom: 10}}>
+            <BarChart data={data.slice()} margin={{top: 20, right: 50, left: 5, bottom: 10}}>
               <CartesianGrid strokeDasharray="3 3"/>
               <XAxis dataKey="time"/>
               <YAxis yAxisId="left" orientation="left" stroke="#ffc658"/>

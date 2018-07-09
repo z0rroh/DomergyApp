@@ -46,7 +46,7 @@ class DashBoard extends Component {
             <Card
               className="DashBoardCard col-xs-12"
               interactive={true} elevation={Elevation.TWO}>
-              <SimpleAreaChart/>
+              <LineChart/>
             </Card>
           </div>
         </div>

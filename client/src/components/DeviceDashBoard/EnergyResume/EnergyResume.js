@@ -4,7 +4,18 @@ import EnergyConsumed from '../../../assets/Videos/ConsumoKw/energy-consumed.mp4
 
 class EnergyResume extends Component {
 
+  constructor(props){
+    super(props);
+
+    this.state={
+      medMax: 100,
+      totalMon: 970
+    }
+  }
+
+  
   render() {
+    const {medMax, totalMon} = this.state;
     return (
       <div className="EnergyResumeContainer">
         <div className="ConsumoKwhTitle">
@@ -16,11 +27,11 @@ class EnergyResume extends Component {
           <div className="ConsumoInfo">
             <div className="MedicionMaxima">
               <h4>Medición Maxima</h4>
-              <h1>1830 kWh</h1>
+              <h1>{medMax} kWh</h1>
             </div>
             <div className="TotalMonetario">
               <h4>Total Monetario</h4>
-              <h1>$15.540</h1>
+              <h1>${totalMon}</h1>
             </div>
           </div>
         </div>

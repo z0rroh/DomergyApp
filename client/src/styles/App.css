@@ -243,7 +243,7 @@
   position: relative; }
   .NavSideBarContainer .main-menu:hover {
     width: 150px;
-    overflow: visible; }
+    overflow: hidden; }
   .NavSideBarContainer .main-menu {
     padding-top: 10px;
     vertical-align: top;
@@ -305,6 +305,9 @@
 
 .main-menu li:hover > a, .main-menu nav li.active > a, .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus, .dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus, .no-touch .dashboard-page nav.dashboard-menu ul li:hover a, .dashboard-page nav.dashboard-menu ul li.active a {
   color: #260082; }
+
+.App {
+  background-color: #e9ebee; }
 
 @media (max-width: 767px) {
   .hiddeSearchBar {

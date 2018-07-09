@@ -1,60 +1,39 @@
 import React, { Component } from 'react';
 import {ResponsiveContainer, AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, Legend} from 'recharts';
 import moment from 'moment'
-import values from '../consumodiario2.json'
+import values from '../potencia2.json'
 
 class SimpleAreaChart extends Component {
   constructor(props){
     super(props);
       this.state = {
-        values: [],
-        data: [
-          {name: 'A', uv: 700},
-          {name: 'B', uv: 3000},
-          {name: 'C', uv: 2000},
-          {name: 'D', uv: 2780},
-          {name: 'E', uv: 1890},
-          {name: 'F', uv: 2390},
-          {name: 'G', uv: 3490}
-        ]
+        values: []
       }
   }
 
   componentDidMount(){
-    this.delayState()
-    //this.delayValues()
+    this.delayValues()
   }
 
   delayState() {
-    setInterval(() => {
-      const newData = this.state.data;
-      newData.splice(0,1);
-      newData.push({name: moment(new Date()).format('HH:mm:ss'), uv: Math.floor((Math.random() * 1000) + 800)})
-      this.setState({data: newData})
-    }, 1000);
+    setInterval(async() => {
+      const values = this.state.values;
+      const value = values.slice(-1);
+      const valueTime = moment(value[0].time, "HH:mm:ss").add(3,'seconds').format("HH:mm:ss")
+      values.push({time: valueTime, value: Math.floor((Math.random() * 0.035) + 0.0020)})
+      this.setState({values: values})
+    }, 3000);
   }
 
-  delayNewValue = (items) =>{
-    const values = this.state.values;
-    const value = values.slice(-1);
-    const valueTime = moment(value[0].time,'HH:mm:ss').add(10,'seconds')
-    console.log(value[0].time,valueTime);
-    const timeNow = moment().format('HH:mm:ss');
-    const item = items.find(item => {return moment(item.time).format("HH:mm:ss") === "00:00:00"});
-    const newItem = {
-      time: moment(item.time).format("HH:mm:ss"),
-      value: item.value
-    }
-  }
   delayValues = async () =>{
     try{
       const items = values;
       const initialValues = await this.getInitialValues(items)
-      console.log(initialValues);
+      //console.log(initialValues);
       await this.setState({
         values: initialValues
       })
-      this.delayNewValue(items);
+      this.delayState()
     }catch(e){
       console.log(e);
     }
@@ -62,12 +41,14 @@ class SimpleAreaChart extends Component {
 
   getInitialValues = async (items)=>{
     try{
-      const start = "00:00:00"
-      const end = moment().format('HH:mm:ss')
+      const format = "HH:mm:ss"
+      const start = moment("00:00:00",format)
+      const now = moment().format('HH:mm:ss')
+      const end = moment(now, format)
       const newData = []
       await items.forEach((item)=>{
         const itemTime = moment(item.time).format("HH:mm:ss");
-        if(itemTime >= start && itemTime <= end){
+        if(moment(itemTime,format).isBetween(start,end)){
           var newItem = {
             time: itemTime,
             value: item.value
@@ -81,9 +62,27 @@ class SimpleAreaChart extends Component {
     }
   }
 
+  delayNewValue = (items) =>{
+    setInterval(async ()=>{
+      const values = this.state.values;
+      const value = values.slice(-1);
+      const valueTime = await moment(value[0].time, "HH:mm:ss").add(3,'seconds').format("HH:mm:ss")
+      const filterItem = await items.filter((item) =>{ return moment(item.time).format("HH:mm:ss") === valueTime })
+      if(filterItem[0]){
+        const newItem = {
+          time: valueTime,
+          value: filterItem[0].value
+        }
+        values.push(newItem)
+        console.log(newItem);
+        this.setState({values: values})
+      }
+    },1000)
+  }
+
 
   render() {
-    const data = this.state.data;
+    const data = this.state.values;
     return (
       <div className="LineChartContainer">
         <div className="ConsumoActualTitle">
@@ -93,12 +92,12 @@ class SimpleAreaChart extends Component {
           <ResponsiveContainer width="100%" height="100%" minHeight={283}>
             <AreaChart data={data.slice()} margin={{top: 20, right: 30, left: 0, bottom: 0}}>
               <CartesianGrid strokeDasharray="1 1"/>
-              <XAxis dataKey="name"/>
+              <XAxis dataKey="time"/>
               <YAxis/>
               <Tooltip/>
               <Area
                 type='monotone'
-                dataKey='uv'
+                dataKey='value'
                 stroke='#82ca9d'
                 fill='#82ca9d' />
             </AreaChart>

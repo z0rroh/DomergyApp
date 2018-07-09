@@ -26,7 +26,6 @@ class SimpleLineChart extends Component {
   delayState() {
     setInterval(() => {
       const newData = this.state.data;
-      newData.splice(0,1);
       newData.push({name: moment(new Date()).format('HH:mm:ss'), uv: Math.floor((Math.random() * 1000) + 100), pv: Math.floor((Math.random() * 1000) + 100), amt: 2309})
       this.setState({data: newData})
     }, 1000);
@@ -42,7 +41,7 @@ class SimpleLineChart extends Component {
         </div>
         <div className="ConsumoActualBody">
           <ResponsiveContainer width="100%" height="100%" minHeight={283}>
-            <LineChart data={data} margin={{top: 20, right: 30, left: 10, bottom: 10}}>
+            <LineChart data={data.slice()} margin={{top: 20, right: 30, left: 10, bottom: 10}}>
              <XAxis dataKey="name"/>
              <YAxis/>
              <CartesianGrid strokeDasharray="3 3"/>

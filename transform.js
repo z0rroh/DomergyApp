@@ -2,10 +2,10 @@ var fs = require('fs')
 
 
 const transformFunc = async ()=> {
-  const data = await fs.readFileSync('./consumodiario.json', 'utf8')
+  const data = await fs.readFileSync('./potencia.json', 'utf8')
   const obj = JSON.parse(data)
   const objJson = await dataToJson(obj);
-  const saved = await fs.writeFile('consumodiario2.json', objJson, 'utf8');
+  const saved = await fs.writeFile('potencia2.json', objJson, 'utf8');
   console.log("complete",saved);
 }
 
